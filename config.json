@@ -1,7 +1,7 @@
 {
 	"data_dir": "/consul/data",
 	"ui_dir": "/consul/ui",
-	"log_level": "DEBUG",
+	"log_level": "INFO",
 	"client_addr": "0.0.0.0",
 	"ports": {
 		"dns": 53
