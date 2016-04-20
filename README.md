@@ -1,5 +1,11 @@
 # wdijkerman-consul
 
+[![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg)][hub]
+[![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg)][hub]
+[![Slack](http://glider-slackin.herokuapp.com/badge.svg)][slack]
+[![Image Size](https://img.shields.io/imagelayers/image-size/wdijkerman/consul/latest.svg)](https://imagelayers.io/?images=wdijkerman/consul:latest)
+[![Image Layers](https://img.shields.io/imagelayers/layers/wdijkerman/consul/latest.svg)](https://imagelayers.io/?images=wdijkerman/consul:latest)
+
 # Introduction
 
 This is an Docker container for Consul running on Alpine. The container is very small, a little but more than 40MB in size.
