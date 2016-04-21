@@ -1,10 +1,9 @@
 # wdijkerman-consul
 
-[![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg)][hub]
-[![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg)][hub]
-[![Slack](http://glider-slackin.herokuapp.com/badge.svg)][slack]
-[![Image Size](https://img.shields.io/imagelayers/image-size/wdijkerman/consul/latest.svg)](https://imagelayers.io/?images=wdijkerman/consul:latest)
-[![Image Layers](https://img.shields.io/imagelayers/layers/wdijkerman/consul/latest.svg)](https://imagelayers.io/?images=wdijkerman/consul:latest)
+![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg)
+![Slack](http://glider-slackin.herokuapp.com/badge.svg)
+![Image Layers](https://imagelayers.io/badge/wdijkerman/consul:latest.svg)
 
 # Introduction
 
