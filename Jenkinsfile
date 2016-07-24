@@ -12,14 +12,7 @@ node() {
 
         stage 'Run container'
             sh 'docker run -d --name consultest -p 8888:8500 -p 8887:8400 -p 8886:8300 -p 8885:53/udp consul-new -server -bootstrap -ui-dir /consul/ui'
-            sh '''if [[ ! $(curl --write-out "%{http_code}\\n" --silent --output /dev/null http://$(docker inspect --format \'{{ .NetworkSettings.IPAddress }}\' consul-new):8888) -eq 200 ]]; then
-                docker kill consultest
-                docker rm consultest
-                docker rmi consul-new
-                else
-                docker kill consultest
-                docker rm consultest
-                fi'''
+            sh 'bash tests/runme.sh'
 
         stage 'Git tag & Push'
             sh 'git rev-parse HEAD | cut -c1-12 > GIT_COMMIT'
