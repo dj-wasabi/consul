@@ -55,7 +55,7 @@ node() {
             from: 'jenkins@dj-wasabi.nl',
             replyTo: 'jenkins@dj-wasabi.nl',
             subject: 'Project build failed',
-            to: 'werner@dj-wasabi.nl',
+            to: 'werner@dj-wasabi.nl'
     }
 
     finally {
