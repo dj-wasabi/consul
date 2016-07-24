@@ -1,12 +1,9 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER 	Werner Dijkerman <ikben@werner-dijkerman.nl>
 
 ENV CONSUL_VERSION=0.6.4
 
 RUN apk --update add curl bash ca-certificates && \
-    curl -Ls https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-2.21-r2.apk > /tmp/glibc-2.21-r2.apk && \
-    curl -Ls https://circle-artifacts.com/gh/andyshinn/alpine-pkg-glibc/6/artifacts/0/home/ubuntu/alpine-pkg-glibc/packages/x86_64/glibc-bin-2.21-r2.apk > /tmp/glibc-bin-2.21-r2.apk && \
-    apk add --allow-untrusted /tmp/glibc-2.21-r2.apk /tmp/glibc-bin-2.21-r2.apk && \
     rm -rf /tmp/glibc-2.21-r2.apk /tmp/glibc-bin-2.21-r2.apk /var/cache/apk/*
 
 RUN curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \

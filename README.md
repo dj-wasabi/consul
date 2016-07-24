@@ -52,7 +52,7 @@ This example will boot an single node Consul server, without any agents.
 docker run  -p 8400:8400 -p 8500:8500 \
             -p 8600:53/udp -h server1 \
             wdijkerman/consul -server \
-            -bootstrap -ui-dir /consul/ui
+            -bootstrap -ui -ui-dir /consul/ui
 ```
 
 ## Multi node cluster
@@ -66,7 +66,8 @@ docker run  -p 8300-8302:8300-8302 \
             -p 8600:53 -p 8600:53/udp \
             -v /data/consul/cluster:/consul/data \
             -h server1 wdijkerman/consul \
-            -server -ui-dir /consul/ui -bootstrap-expect 3
+            -server -ui -ui-dir /consul/ui \
+            -bootstrap-expect 3
 ```
 
 As you see, we started the Consul cluster with the `-bootstrap-expect 3` option. We let the Consul Cluster know that the size will be 3 `server` nodes. It doesn't matter how many agent nodes it use.
@@ -81,7 +82,8 @@ docker run  -p 8300-8302:8300-8302 \
             -p 8600:53 -p 8600:53/udp \
             -v /data/consul/cluster:/consul/data \
             -h server[2-5] wdijkerman/consul \
-            -server -ui-dir /consul/ui -join <ip_from_first_node>
+            -server -ui -ui-dir /consul/ui \
+            -join <ip_from_first_node>
 ```
 
 The rest of the server will initially connect to the first booted server and will join the cluster. 
