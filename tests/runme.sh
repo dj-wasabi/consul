@@ -2,6 +2,9 @@
 
 set -x
 
+# Wait for container to boot.
+sleep 10
+
 HOST=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' consultest)
 OUTPUT=$(curl --write-out "%{http_code}\\n" --silent --output /dev/null http://${HOST}:8500/ui/)
 
