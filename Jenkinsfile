@@ -8,18 +8,17 @@ node() {
             checkout scm
 
         stage 'Build'
-            sh 'docker build -t consul .'
-
+            sh 'docker build -t consul-new .'
 
         stage 'Run container'
             sh 'docker run -d --name consultest -p 8888:8500 -p 8887:8400 -p 8886:8300 -p 8885:53/udp consul-new -server -bootstrap -ui-dir /consul/ui'
             sh '''if [[ ! $(curl --write-out "%{http_code}\\n" --silent --output /dev/null http://$(docker inspect --format \'{{ .NetworkSettings.IPAddress }}\' consul-new):8888) -eq 200 ]]; then
-                docker kill consul-new
-                docker rm consul-new
-                docker rmi consul
+                docker kill consultest
+                docker rm consultest
+                docker rmi consul-new
                 else
-                docker kill consul-new
-                docker rm consul-new
+                docker kill consultest
+                docker rm consultest
                 fi'''
 
         stage 'Git tag & Push'
@@ -35,15 +34,15 @@ node() {
                   fi'''
 
         stage 'Docker tag & Push'
-            sh 'docker tag consul 192.168.1.210:5000/consul:$(cat GIT_COMMIT)'
-            sh 'docker tag consul 192.168.1.210:5000/consul:latest'
+            sh 'docker tag consul-new 192.168.1.210:5000/consul:$(cat GIT_COMMIT)'
+            sh 'docker tag consul-new 192.168.1.210:5000/consul:latest'
             sh 'docker push 192.168.1.210:5000/consul:$(cat GIT_COMMIT)'
             sh 'docker push 192.168.1.210:5000/consul:latest'
 
         stage 'cleanup'
             sh 'docker rmi 192.168.1.210:5000/consul:$(cat GIT_COMMIT)'
             sh 'docker rmi 192.168.1.210:5000/consul:latest'
-            sh 'docker rmi consul:latest'
+            sh 'docker rmi consul-new:latest'
 
     }
 
