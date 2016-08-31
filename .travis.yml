@@ -12,7 +12,7 @@ before_install:
   - docker ps -a
 
 script:
-  - testinfra --connection=docker --hosts=consultest
+  - testinfra --connection=docker --hosts=consul
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
