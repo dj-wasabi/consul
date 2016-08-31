@@ -1,9 +1,6 @@
 # wdijkerman-consul
 
-![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg)
-![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg)
-![Slack](http://glider-slackin.herokuapp.com/badge.svg)
-![Image Layers](https://imagelayers.io/badge/wdijkerman/consul:latest.svg)
+![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg) [![](https://images.microbadger.com/badges/image/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own image badge on microbadger.com") [![Build Status](https://travis-ci.org/dj-wasabi/docker-consul.svg?branch=master)](https://travis-ci.org/dj-wasabi/docker-consul) 
 
 # Introduction
 
