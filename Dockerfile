@@ -18,6 +18,9 @@ ONBUILD ADD ./config.json /consul/config/config.json
 
 ADD ./start-consul.sh /bin/start-consul.sh
 
+RUN chmod 644 /consul/config/config.json && \
+    chmod +x /bin/start-consul.sh
+
 EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 8500 53 53/udp
 VOLUME ["/consul/data"]
 VOLUME ["/consul/config"]
