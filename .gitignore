@@ -1,2 +1,4 @@
 .idea
 pmip
+__pycache__
+.cache
