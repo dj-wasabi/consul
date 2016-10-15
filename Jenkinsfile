@@ -12,8 +12,7 @@ node() {
 
         stage 'Run container'
             sh 'docker run -d --name consultest -p 8888:8500 -p 8887:8400 -p 8886:8300 -p 8885:53/udp consul-new -server -bootstrap -ui-dir /consul/ui'
-            sh 'sudo pip install testinfra'
-            sh 'sleep 5 && testinfra --connection=docker --hosts=consultest'
+            sh 'testinfra --connection=docker --hosts=consultest'
             sh 'docker kill consultest'
             sh 'docker rm consultest'
 

@@ -1,7 +1,7 @@
 FROM alpine:3.4
 MAINTAINER 	Werner Dijkerman <ikben@werner-dijkerman.nl>
 
-ENV CONSUL_VERSION=0.6.4
+ENV CONSUL_VERSION=0.7.0
 
 RUN apk --update --no-cache add curl bash python net-tools ca-certificates && \
     rm -rf /var/cache/apk/*
