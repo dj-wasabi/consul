@@ -38,7 +38,7 @@ node() {
         err = caughtError
         currentBuild.result = "FAILURE"
         notifyFailed()
-        removeTest()
+        jobFailed()
     }
 
     finally {
@@ -63,8 +63,13 @@ def removeTest() {
     stage("Remove containers") {
         sh 'docker kill consultest'
         sh 'docker rm consultest'
-        sh 'docker rmi consul-new'
     }
+}
+
+def jobFailed() {
+    removeTest()
+    sh 'docker rmi consul-new'
+    sh 'docker rmi $(docker images | grep "^<none" | awk "{print $3}")'
 }
 
 def gitTag() {
