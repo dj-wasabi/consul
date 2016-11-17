@@ -13,9 +13,8 @@ node() {
         stage 'Run container'
             sh 'docker run -d --name consultest -p 8888:8500 -p 8887:8400 -p 8886:8300 -p 8885:53/udp consul-new -server -bootstrap -ui-dir /consul/ui'
             sh 'testinfra --connection=docker --hosts=consultest'
-            sh 'docker kill consultest'
-            sh 'docker rm consultest'
 
+        removeTest()
         gitTag()
 
         stage 'Docker tag & Push'
@@ -35,6 +34,7 @@ node() {
         err = caughtError
         currentBuild.result = "FAILURE"
         notifyFailed()
+        removeTest()
     }
 
     finally {
@@ -54,6 +54,14 @@ def notifyFailed() {
         attachLog: true
     )
 }
+
+def removeTest() {
+    stage 'Remove containers'
+        sh 'docker kill consultest'
+        sh 'docker rm consultest'
+}
+
+
 
 def gitTag() {
   stage 'Git Tag'
