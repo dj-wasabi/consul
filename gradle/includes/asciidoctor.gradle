@@ -1,0 +1,48 @@
+// This file is specific configuration for Asciidoctor.
+
+apply plugin: 'org.asciidoctor.convert'
+
+dependencies {
+    gems 'rubygems:asciidoctor-diagram:1.4.0'
+}
+
+asciidoctorj {
+    version = '1.5.4'
+}
+
+asciidoctor {
+    sourceDir = file('.')
+    outputDir = file('build/docs')
+
+    sources {
+    	include("*.adoc");
+    	include("**/*.adoc");
+    	exclude("build");
+	}
+
+    dependsOn jrubyPrepare
+    requires = ['asciidoctor-diagram']
+    gemPath = jrubyPrepare.outputDir
+
+    attributes \
+        'build-gradle': file('build.gradle'),
+        'source-highlighter' : 'coderay',
+        'imagesdir': 'images',
+        'toc': 'left',
+        'icons': 'font',
+        'setanchors': '',
+        'idprefix': '',
+        'idseparator': '-',
+        'docinfo1': ''
+}
+
+task doczip(type: Jar) {
+    from ('build/docs/html5/')
+    from '**/*.png'
+    into project_name
+    version project_version
+}
+
+artifacts {
+    archives doczip
+}

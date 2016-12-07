@@ -1,0 +1,90 @@
+:toc: left
+:coderay-css: style
+:sectnums:
+
+= Consul
+
+== Introduction
+
+Container running Alpine 3.4 and Consul 0.7.1. This container works for both `consul server` and `consul agent`.
+
+== Container
+
+=== User
+
+Consul is running as a non-root user: `consul`. There is not really a need for running Consul as root, only for the DNS server.
+
+This is why we need to modify the consul binary itself. The capability we need to add is CAP_NET_BIND_SERVICE, which is explicitly defined as the capacity for an executable to bind to a port less than 1024.
+
+=== Ports
+
+The following ports are in use:
+
+* Server RPC (Default 8300). This is used by servers to handle incoming requests from other agents. TCP only.
+* Serf LAN (Default 8301). This is used to handle gossip in the LAN. Required by all agents. TCP and UDP.
+* Serf WAN (Default 8302). This is used by servers to gossip over the WAN to other servers. TCP and UDP.
+* CLI RPC (Default 8400). This is used by all agents to handle RPC from the CLI. TCP only.
+* HTTP API (Default 8500). This is used by clients to talk to the HTTP API. TCP only.
+* DNS Interface (Default 8600). Used to resolve DNS queries. TCP and UDP.
+
+=== Volumes
+
+Several volumes are configured:
+
+* /consul/data
+* /consul/config
+
+==== /consul/data
+
+This is the directory that contains the actual cluster data. This
+
+==== /consul/config
+
+This directory contains the configuration for the Consul Server/Cluster. When a file is placed and the Consul instance is restarted, the configuration is applied/active.
+
+== Example run
+
+=== Single Consul server
+
+The following example is for running a single Consul server:
+
+[source,bash,linenums]
+----
+docker run  -p 8400:8400 -p 8500:8500 \
+            -p 8600:53/udp -h server1 \
+            wdijkerman/consul -server \
+            -bootstrap -ui -ui-dir /consul/ui
+----
+
+=== Consul server
+
+When you want to run a Consul Cluster of several servers, you'll have to execute the following example:
+
+[source,bash,linenums]
+----
+docker run  -p 8300-8302:8300-8302 \
+            -p 8301-8302:8301-8302/udp \
+            -p 8400:8400 -p 8500:8500 \
+            -p 8600:53 -p 8600:53/udp \
+            -v /data/consul/data:/consul/data \
+            -v /data/consul/config:/consul/config \
+            -h server1 wdijkerman/consul \
+            -server -ui -ui-dir /consul/ui \
+            -bootstrap-expect 3
+----
+
+This example assumes a Consul Cluster of 3 Consul Servers.
+
+=== Consul Agent
+
+The following example is for running a Consul Agent.
+
+[source,bash,linenums]
+----
+docker run  -p 8301-8302:8301-8302 \
+            -p 8301-8302:8301-8302/udp \
+            -p 8400:8400 -p 8500:8500 \
+            -p 8600:53 -p 8600:53/udp \
+            -h agent[1-??] wdijkerman/consul \
+            -join <ip_from_first_node>
+----

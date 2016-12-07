@@ -5,7 +5,7 @@ ENV CONSUL_VERSION=0.7.1 \
     CONSUL_USERNAME="consul" \
     CONSUL_USERID=995
 
-RUN apk --update --no-cache add curl bash libcap openssl python net-tools ca-certificates && \
+RUN apk --update --no-cache add tini curl bash libcap openssl python net-tools ca-certificates && \
     rm -rf /var/cache/apk/*
 
 ADD ./start-consul.sh /bin/start-consul.sh
@@ -31,5 +31,5 @@ VOLUME ["/consul/config"]
 
 ENV SHELL /bin/bash
 
-ENTRYPOINT ["/bin/start-consul.sh"]
+ENTRYPOINT ["/sbin/tini", "--", "/bin/start-consul.sh"]
 CMD []
