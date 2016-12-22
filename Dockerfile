@@ -1,7 +1,7 @@
 FROM alpine:3.4
 MAINTAINER 	Werner Dijkerman <ikben@werner-dijkerman.nl>
 
-ENV CONSUL_VERSION=0.7.1 \
+ENV CONSUL_VERSION=0.7.2 \
     CONSUL_USERNAME="consul" \
     CONSUL_USERID=995
 
