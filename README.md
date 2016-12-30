@@ -41,8 +41,9 @@ At the moment, the `progrium/consul` is currently the most popular container run
 
 ## Versions
 
-- `0.0.1`,  [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
-- `0.0.2`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
+- `0.0.1`,  [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/df23223d6a796bf32400ea652f81b5d8daad8a42/Dockerfile)
+- `0.0.2`,  [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/19f77a25940ce72f1f708ed5c93ffa64355606f2/Dockerfile)
+- `0.0.3`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
 
 # Install the container
 
