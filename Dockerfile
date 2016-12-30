@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.5
 MAINTAINER 	Werner Dijkerman <ikben@werner-dijkerman.nl>
 
 ENV CONSUL_VERSION=0.7.2 \
