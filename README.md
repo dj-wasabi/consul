@@ -8,9 +8,10 @@ This is an Docker container for Consul running on Alpine. The container is very 
 
 The versions in this Docker container:
 
-* alpine: 3.4
-* consul: 0.6.4
+* alpine: 3.5
+* consul: 0.7.2
 
+## Volumes
 The consul application is installed in the /bin directory in the container, so is the start script. There data from Consul is in the /consul directory:
 
 * /consul/ui
@@ -25,6 +26,14 @@ The location of the config.json file. This is also an volume, so this can be mou
 
 */consul/data*
 The location where Consul will store all data. This is also an volume, so this can be mounted on the host.
+
+## User
+
+Consul is running as user consul. With the following capabilities it should be no problem running Consul as non-root user:
+
+- cap_ipc_lock (Should not swap)
+- cap_net_bind_service (Can bind service <1023 as non root)
+
 
 ## why another version?
 
