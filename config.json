@@ -7,13 +7,5 @@
 		"dns": 53
 	},
 	"recursor": "8.8.8.8",
-	"disable_update_check": true,
-    "dns_config": {
-      "allow_stale": true,
-      "max_stale": "2s",
-      "node_ttl": "30s",
-      "service_ttl": {
-        "*": "10s"
-      }
-    }
+	"disable_update_check": true
 }

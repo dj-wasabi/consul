@@ -18,18 +18,16 @@ RUN adduser -D -u ${CONSUL_USERID} ${CONSUL_USERNAME} && \
     unzip -d /consul/ui /tmp/webui.zip && \
     rm -rf /tmp/webui.zip /tmp/consul.zip && \
     chown -R consul /consul && \
-    setcap cap_ipc_lock=+ep $(readlink -f $(which consul)) && \
+    setcap cap_ipc_lock=+ep $(readlink -f /bin/consul) && \
     setcap "cap_net_bind_service=+ep" /bin/consul && \
     chmod +x /bin/start-consul.sh
 
 USER ${CONSUL_USERNAME}
+ADD ./config.json /consul/config.json
 
 EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 8500 53 53/udp
-
-VOLUME ["/consul/data"]
-VOLUME ["/consul/config"]
+VOLUME ["/consul/data", "/consul/config"]
 
 ENV SHELL /bin/bash
-
 ENTRYPOINT ["/sbin/tini", "--", "/bin/start-consul.sh"]
 CMD []
