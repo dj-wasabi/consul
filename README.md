@@ -35,10 +35,11 @@ The UID used in this container is 995. So make sure the id is already available 
 
 ### Versions
 
-- `0.0.1`,  [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/df23223d6a796bf32400ea652f81b5d8daad8a42/Dockerfile)
-- `0.0.2`,  [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/19f77a25940ce72f1f708ed5c93ffa64355606f2/Dockerfile)
-- `0.0.3`,  [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/3765e14486a8dcf371f23784300687130c70ea95/Dockerfile)
-- `0.7.2`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
+- `0.0.1`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/df23223d6a796bf32400ea652f81b5d8daad8a42/Dockerfile)
+- `0.0.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/19f77a25940ce72f1f708ed5c93ffa64355606f2/Dockerfile)
+- `0.0.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/3765e14486a8dcf371f23784300687130c70ea95/Dockerfile)
+- `0.7.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/beb68930fd9851d29ef63c67b89725ba8083a534/Dockerfile)
+- `0.7.3`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
 
 The version of this container will be the same as the version of Consul, beginning with Consul 0.7.2. 
 
