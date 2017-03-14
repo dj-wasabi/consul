@@ -1,9 +1,11 @@
 FROM alpine:3.5
 MAINTAINER 	Werner Dijkerman <ikben@werner-dijkerman.nl>
 
+ARG CONSUL_USERID
+
 ENV CONSUL_VERSION=0.7.5 \
     CONSUL_USERNAME="consul" \
-    CONSUL_USERID=995
+    CONSUL_USERID=${CONSUL_USERID:-1050}
 
 RUN apk --update --no-cache add tini curl bash libcap openssl python net-tools ca-certificates && \
     rm -rf /var/cache/apk/* && \

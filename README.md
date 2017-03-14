@@ -31,7 +31,7 @@ Consul is running as user consul. With the following capabilities (which are con
 - cap_ipc_lock (Should not swap. Also `--cap-add IPC_LOCK` should be added to the command line when to start the Consul Server)
 - cap_net_bind_service (Can bind service <1023 as non root user)
 
-The UID used in this container is 995. So make sure the id is already available on the host running the container when host mounts are used.
+The UID used in this container is 1050. So make sure the id is already available on the host running the container when host mounts are used.
 
 ### Versions
 
@@ -123,6 +123,20 @@ docker run  -p 8301-8302:8301-8302 \
 ## Configurations
 
 There are a lot of options to configure Consul. See this page for all options: https://www.consul.io/docs/agent/options.html
+
+### Environment variables
+
+You can use the following environment variables for configuring Consul:
+
+* `CONSUL_INTERFACE_ADVERTISE`: When a network interface is configured, it will use the ip of the interface as advertise address. 
+* `CONSUL_INTERFACE_BIND`: When a network interface is configured, it will use the ip of the interface as bind address.
+* `CONSUL_INTERFACE_CLIENT`: When a network interface is configured, it will use the ip of the interface as client address.
+
+Example:
+
+```bash
+-e CONSUL_INTERFACE_BIND=eth0
+```
 
 ### Add commandline
 
