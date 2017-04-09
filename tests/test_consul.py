@@ -1,7 +1,7 @@
 
 def test_socker(Socket):
     assert Socket('tcp://:::8500').is_listening
-    assert Socket('tcp://:::8400').is_listening
+    #assert Socket('tcp://:::8400').is_listening
     assert Socket('tcp://:::8302').is_listening
     assert Socket('udp://:::8302').is_listening
     assert Socket('tcp://:::8301').is_listening
