@@ -9,7 +9,7 @@ This is an Docker container for Consul running on Alpine. The container is small
 The versions in this Docker container:
 
 * alpine: 3.5
-* consul: 0.7.5
+* consul: 0.8.0
 * python: 2.7.13
 
 ### Volumes
@@ -40,7 +40,8 @@ The UID used in this container is 1050. So make sure the id is already available
 - `0.0.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/3765e14486a8dcf371f23784300687130c70ea95/Dockerfile)
 - `0.7.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/beb68930fd9851d29ef63c67b89725ba8083a534/Dockerfile)
 - `0.7.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/cb39070762027b35700918e838fa9ea02dc75bcf/Dockerfile)
-- `0.7.5`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
+- `0.7.5`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/f24be30a0adfe709fd5d68d7e3df350a0893ec3b/Dockerfile)
+- `0.8.0`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
 
 The version of this container will be the same as the version of Consul, beginning with Consul 0.7.2. 
 
@@ -191,6 +192,11 @@ Consul requires up to 5 different ports to work properly, some on TCP, UDP, or b
 * CLI RPC (Default 8400). This is used by all agents to handle RPC from the CLI. TCP only.
 * HTTP API (Default 8500). This is used by clients to talk to the HTTP API. TCP only.
 * DNS Interface (Default 8600). Used to resolve DNS queries. TCP and UDP.
+
+## how to's
+
+[Setting up a secure Consul cluster](https://werner-dijkerman.nl/2017/01/09/setting-up-a-secure-consul-cluster-with-docker/)
+[Configuring Access Control Lists](https://werner-dijkerman.nl/2017/01/11/configuring-access-control-lists-in-consul/)
 
 ## License
 
