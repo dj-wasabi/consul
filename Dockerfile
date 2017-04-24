@@ -3,7 +3,7 @@ MAINTAINER 	Werner Dijkerman <ikben@werner-dijkerman.nl>
 
 ARG CONSUL_USERID
 
-ENV CONSUL_VERSION=0.8.0 \
+ENV CONSUL_VERSION=0.8.1 \
     CONSUL_USERNAME="consul" \
     CONSUL_USERID=${CONSUL_USERID:-1050}
 
