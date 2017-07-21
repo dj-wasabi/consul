@@ -18,9 +18,6 @@ RUN adduser -D -u ${CONSUL_USERID} ${CONSUL_USERNAME} && \
     curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \
     unzip -d /bin /tmp/consul.zip && \
     mkdir -p /consul/data /consul/ui /consul/config && \
-    curl -sSLo /tmp/webui.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_web_ui.zip && \
-    unzip -d /consul/ui /tmp/webui.zip && \
-    rm -rf /tmp/webui.zip /tmp/consul.zip && \
     chown -R consul /consul && \
     chmod 644 /consul/config.json && \
     setcap cap_ipc_lock=+ep $(readlink -f /bin/consul) && \
