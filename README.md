@@ -45,7 +45,8 @@ The UID used in this container is 1050. So make sure the id is already available
 - `0.8.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/bb9b93911d6d0449f315fd6a756fcc82f03e7306/Dockerfile)
 - `0.8.4`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/5d0978b693daf39a482711e309b126d148ed66e5/Dockerfile)
 - `0.8.5`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/0c6c149b018f6a95ef64c8adf01c6837889b9cbd/Dockerfile)
-- `0.9.0`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
+- `0.9.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/3adb6502c1218537c99cbc945974a6a6c72eb8ef/Dockerfile)
+- `0.9.1`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
 
 The version of this container will be the same as the version of Consul, beginning with Consul 0.7.2. 
 
