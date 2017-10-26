@@ -29,7 +29,7 @@ USER ${CONSUL_USERNAME}
 EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 8500 53 53/udp
 VOLUME ["/consul/data", "/consul/config"]
 
-HEALTHCHECK --interval=10s --timeout=5s --start-period=5s CMD curl -sf http://localhost:8500/ || exit 1
+HEALTHCHECK --interval=10s --timeout=5s CMD curl -sf http://localhost:8500/ || exit 1
 
 ENV SHELL /bin/bash
 ENTRYPOINT ["/sbin/tini", "--", "/bin/start-consul.sh"]
