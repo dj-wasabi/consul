@@ -9,7 +9,7 @@ This is an Docker container for Consul running on Alpine. The container is small
 The versions in this Docker container:
 
 * alpine: 3.6
-* consul: 0.9.2
+* consul: 1.0.1
 * python: 2.7.13
 
 ### Volumes
@@ -47,7 +47,9 @@ The UID used in this container is 1050. So make sure the id is already available
 - `0.8.5`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/0c6c149b018f6a95ef64c8adf01c6837889b9cbd/Dockerfile)
 - `0.9.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/3adb6502c1218537c99cbc945974a6a6c72eb8ef/Dockerfile)
 - `0.9.1`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/504d9b4508ac6b1b0313c2db33b46cdbb75deeea/Dockerfile)
-- `0.9.2`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/docker-consul/blob/master/Dockerfile)
+- `0.9.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/2943039888b036937cb7ecc757347c8afef47b81/Dockerfile)
+- `1.0.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/30eddb18c97091a469a871e908a48cb598da30c1/Dockerfile)
+- `1.0.1`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/master/Dockerfile)
 
 The version of this container will be the same as the version of Consul, beginning with Consul 0.7.2. 
 
@@ -72,12 +74,32 @@ There are several ways to use this container.
 
 This example will boot an single node Consul server, without any agents.
 
+The following json file needs to be stored somewhere:
+
+```json
+{
+	"data_dir": "/consul/data",
+	"log_level": "INFO",
+	"client_addr": "0.0.0.0",
+	"ports": {
+		"dns": 53
+	},
+	"ui": true,
+	"server": true,
+    "bootstrap_expect": 1,
+	"disable_update_check": true
+}
+```
+
+Then you can use the following command to boot the Single node cluster:
+
 ```bash
 docker run  -p 8400:8400 -p 8500:8500 \
             -p 8600:53/udp -h server1 \
-            wdijkerman/consul -server \
-            -bootstrap -ui -ui-dir /consul/ui
+            -v path/to/file.json:/consul/config/my_config.json:ro \
+            wdijkerman/consul
 ```
+
 
 ### Multi node cluster
 
@@ -90,9 +112,7 @@ docker run  -p 8300-8302:8300-8302 \
             -p 8600:53 -p 8600:53/udp \
             -v /data/consul/cluster:/consul/data \
             -v /data/consul/config:/consul/config \
-            -h server1 wdijkerman/consul \
-            -server -ui -ui-dir /consul/ui \
-            -bootstrap-expect 3
+            -h server1 wdijkerman/consul
 ```
 
 As you see, we started the Consul cluster with the `-bootstrap-expect 3` option. We let the Consul Cluster know that the size will be 3 `server` nodes. It doesn't matter how many agent nodes it use.
@@ -107,9 +127,7 @@ docker run  -p 8300-8302:8300-8302 \
             -p 8600:53 -p 8600:53/udp \
             -v /data/consul/cluster:/consul/data \
             -v /data/consul/config:/consul/config \
-            -h server[2-5] wdijkerman/consul \
-            -server -ui -ui-dir /consul/ui \
-            -join <ip_from_first_node>
+            -h server[2-5] wdijkerman/consul
 ```
 
 The rest of the server will initially connect to the first booted server and will join the cluster. 
@@ -123,8 +141,7 @@ docker run  -p 8301-8302:8301-8302 \
             -p 8301-8302:8301-8302/udp \
             -p 8400:8400 -p 8500:8500 \
             -p 8600:53 -p 8600:53/udp \
-            -h agent[1-??] wdijkerman/consul \
-            -join <ip_from_first_node>
+            -h agent[1-??] wdijkerman/consul
 ```
 
 ## Configurations
@@ -154,9 +171,7 @@ docker run  -p 8301-8302:8301-8302 \
             -p 8301-8302:8301-8302/udp \
             -p 8400:8400 -p 8500:8500 \
             -p 8600:53 -p 8600:53/udp \
-            -h agent[1-??] wdijkerman/consul \
-            -join <ip_from_first_node> \
-            -advertise 10.0.0.2
+            -h agent[1-??] wdijkerman/consul
 ```
 
 In the configuration you see above, we have added the `-advertise` configuration option.
