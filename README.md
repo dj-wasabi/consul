@@ -1,14 +1,13 @@
 # wdijkerman/consul
 
-![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg) [![](https://images.microbadger.com/badges/image/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own image badge on microbadger.com") [![Build Status](https://travis-ci.org/dj-wasabi/docker-consul.svg?branch=master)](https://travis-ci.org/dj-wasabi/docker-consul) 
-
+![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg) [![](https://images.microbadger.com/badges/image/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own image badge on microbadger.com") [![Build Status](https://travis-ci.org/dj-wasabi/docker-consul.svg?branch=master)](https://travis-ci.org/dj-wasabi/consul)
 ## Introduction
 
 This is an Docker container for Consul running on Alpine. The container is small, a little bit more than 75MB in size.
 
 The versions in this Docker container:
 
-* alpine: 3.6
+* alpine: 3.7
 * consul: 1.0.1
 * python: 2.7.13
 
