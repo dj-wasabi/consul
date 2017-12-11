@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.7
 MAINTAINER 	Werner Dijkerman <ikben@werner-dijkerman.nl>
 
 ARG CONSUL_USERID
