@@ -6,7 +6,7 @@ python:
   - "2.7"
 
 before_install:
-  - pip install testinfra
+  - pip install testinfra requests
   - docker build -t wdijkerman/consul .
   - cd tests; docker-compose up -d consul
   - "while [[ $(docker logs consul 2>&1 | grep 'agent: Synced node info' | wc -l) -eq 0 ]];do echo 'Waiting for proper boot';sleep 5;done"
