@@ -17,6 +17,7 @@ ADD ./config.json /consul/config.json
 RUN adduser -D -u ${CONSUL_USERID} ${CONSUL_USERNAME} && \
     curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \
     unzip -d /bin /tmp/consul.zip && \
+    rm -f /tmp/consul.zip && \
     mkdir -p /consul/data /consul/ui /consul/config && \
     chown -R consul /consul && \
     chmod 644 /consul/config.json && \
