@@ -9,5 +9,5 @@ services:
     hostname: "consul"
     ports:
       - "8500:8500"
-#    volumes:
-#      - ./config.json:/consul/config/consul.json
+    volumes:
+      - ./tests/config.json:/consul/config/consul.json

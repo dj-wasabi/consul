@@ -8,8 +8,8 @@ python:
 before_install:
   - pip install testinfra requests
   - docker build -t wdijkerman/consul .
-  - cd tests; docker-compose up -d consul
-  - "while [[ $(docker logs consul 2>&1 | grep 'agent: Synced node info' | wc -l) -eq 0 ]];do echo 'Waiting for proper boot';sleep 5;done"
+  - docker-compose up -d consul
+  - cd tests; "while [[ $(docker logs consul 2>&1 | grep 'agent: Synced node info' | wc -l) -eq 0 ]];do echo 'Waiting for proper boot';sleep 5;done"
 
 script:
   - testinfra --connection=docker --hosts=consul

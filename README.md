@@ -1,6 +1,7 @@
 # wdijkerman/consul
 
-![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg) [![](https://images.microbadger.com/badges/image/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own image badge on microbadger.com") [![Build Status](https://travis-ci.org/dj-wasabi/docker-consul.svg?branch=master)](https://travis-ci.org/dj-wasabi/consul)
+![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg) [![](https://images.microbadger.com/badges/image/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own version badge on microbadger.com") [![Build Status](https://travis-ci.org/dj-wasabi/consul.svg?branch=master)](https://travis-ci.org/dj-wasabi/consul)
+
 ## Introduction
 
 This is an Docker container for Consul running on Alpine. The container is small, a little bit more than 75MB in size.
@@ -58,7 +59,7 @@ The version of this container will be the same as the version of Consul, beginni
 ### Python?
 
 Python is also installed in the container. Python is used for testing the container, which is done with the tool `testinfra`.
-You can see in the `tests` directory a file named `test_consul.py` which will be executed. (Still WiP)
+You can see in the `tests` directory a file named `test_consul.py` which will be executed.
 
 ## Install the container
 
@@ -146,6 +147,14 @@ docker run  -p 8301-8302:8301-8302 \
             -h agent[1-??] wdijkerman/consul
 ```
 
+### docker-compose
+
+A `docker-compose.yml` file is present in the root, that can be used for starting a basic single node Consul Server.
+
+```bash
+docker-compose -f docker-compose.yml up consul```
+```
+
 ## Configurations
 
 There are a lot of options to configure Consul. See this page for all options: https://www.consul.io/docs/agent/options.html
@@ -154,9 +163,9 @@ There are a lot of options to configure Consul. See this page for all options: h
 
 You can use the following environment variables for configuring Consul:
 
-* `CONSUL_INTERFACE_ADVERTISE`: When a network interface is configured, it will use the ip of the interface as advertise address. 
-* `CONSUL_INTERFACE_BIND`: When a network interface is configured, it will use the ip of the interface as bind address.
-* `CONSUL_INTERFACE_CLIENT`: When a network interface is configured, it will use the ip of the interface as client address.
+* `CONSUL_INTERFACE_ADVERTISE`: When a network interface is configured, it will use that ip of the interface as advertise address. 
+* `CONSUL_INTERFACE_BIND`: When a network interface is configured, it will use that ip of the interface as bind address.
+* `CONSUL_INTERFACE_CLIENT`: When a network interface is configured, it will use that ip of the interface as client address.
 
 Example:
 
