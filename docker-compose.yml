@@ -10,4 +10,4 @@ services:
     ports:
       - "8500:8500"
     volumes:
-      - ./config.json:/consul/config/consul.json
+      - ./tests/config.json:/consul/config/consul.json

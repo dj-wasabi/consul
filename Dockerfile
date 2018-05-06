@@ -11,8 +11,8 @@ RUN apk --update --no-cache add tini curl bash libcap openssl python net-tools c
     rm -rf /var/cache/apk/* && \
     mkdir /consul
 
-ADD ./start-consul.sh /bin/start-consul.sh
-ADD ./config.json /consul/config.json
+ADD ./src/bin/start-consul.sh /bin/start-consul.sh
+ADD ./src/etc/config.json /consul/config.json
 
 RUN adduser -D -u ${CONSUL_USERID} ${CONSUL_USERNAME} && \
     curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \
