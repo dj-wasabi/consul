@@ -152,7 +152,7 @@ docker run  -p 8301-8302:8301-8302 \
 A `docker-compose.yml` file is present in the root, that can be used for starting a basic single node Consul Server.
 
 ```bash
-docker-compose -f docker-compose.yml up consul```
+docker-compose -f docker-compose.yml up consul
 ```
 
 ## Configurations
