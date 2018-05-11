@@ -9,7 +9,7 @@ This is an Docker container for Consul running on Alpine. The container is small
 The versions in this Docker container:
 
 * alpine: 3.7
-* consul: 1.0.7
+* consul: 1.1.0
 * python: 2.7.13
 
 ### Volumes
