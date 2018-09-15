@@ -1,9 +1,9 @@
-FROM alpine:3.7
+FROM alpine:3.8
 MAINTAINER 	Werner Dijkerman <ikben@werner-dijkerman.nl>
 
 ARG CONSUL_USERID
 
-ENV CONSUL_VERSION=1.2.2 \
+ENV CONSUL_VERSION=1.2.3 \
     CONSUL_USERNAME="consul" \
     CONSUL_USERID=${CONSUL_USERID:-1050}
 
