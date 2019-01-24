@@ -9,7 +9,7 @@ This is an Docker container for Consul running on Alpine. The container is small
 The versions in this Docker container:
 
 * alpine: 3.8
-* consul: 1.4.0
+* consul: 1.4.1
 * python: 2.7.13
 
 ### Volumes
@@ -58,9 +58,10 @@ The UID used in this container is 1050. So make sure the id is already available
 - `1.2.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/dbbc9e042532c8077f1dbade41ace3feabe834f5/Dockerfile)
 - `1.2.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/824d94bfdc0ac5261affa6a472e2ee5642783c8b/Dockerfile)
 - `1.3.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/f3b4babb4b68e243bd197f256e8c166df08abe38/Dockerfile)
-- `1.4.0`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/master/Dockerfile)
+- `1.4.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/7d2ab32383a9414bf921a168183fcf80922a8163/Dockerfile)
+- `1.4.1`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/master/Dockerfile)
 
-The version of this container will be the same as the version of Consul, beginning with Consul 0.7.2. 
+The version of this container will be the same as the version of Consul, beginning with Consul 0.7.2.
 
 ### Python?
 
@@ -195,10 +196,10 @@ In the configuration you see above, we have added the `-advertise` configuration
 
 ### Add configuration file
 
-You can also add a json configuration file. Place the json file in the `/data/consul/config` directory (Or use the directory which you use for storing configuration). 
+You can also add a json configuration file. Place the json file in the `/data/consul/config` directory (Or use the directory which you use for storing configuration).
 
 ```
-cat /data/consul/config/datacenter.json 
+cat /data/consul/config/datacenter.json
 {
   "datacenter": "nwg"
 }
@@ -229,6 +230,7 @@ Consul requires up to 5 different ports to work properly, some on TCP, UDP, or b
 * Serf WAN (Default 8302). This is used by servers to gossip over the WAN to other servers. TCP and UDP.
 * CLI RPC (Default 8400). This is used by all agents to handle RPC from the CLI. TCP only.
 * HTTP API (Default 8500). This is used by clients to talk to the HTTP API. TCP only.
+* gRPC (Default 8502). This is used for to expose Envoy xDS API to Envoy proxies
 * DNS Interface (Default 8600). Used to resolve DNS queries. TCP and UDP.
 
 ## how to's
@@ -244,6 +246,6 @@ See file: License
 
 ## Issues
 
-Please report issues at https://github.com/dj-wasabi/consul/issues 
+Please report issues at https://github.com/dj-wasabi/consul/issues
 
 Pull Requests are welcome!

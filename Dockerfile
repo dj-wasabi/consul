@@ -1,13 +1,12 @@
 FROM alpine:3.8
-MAINTAINER 	Werner Dijkerman <ikben@werner-dijkerman.nl>
 
 ARG CONSUL_USERID
 
-ENV CONSUL_VERSION=1.4.0 \
+ENV CONSUL_VERSION=1.4.1 \
     CONSUL_USERNAME="consul" \
     CONSUL_USERID=${CONSUL_USERID:-1050}
 
-RUN apk --update --no-cache add tini curl bash libcap openssl python net-tools ca-certificates && \
+RUN apk --update --no-cache add tini curl bash libcap python net-tools ca-certificates && \
     rm -rf /var/cache/apk/* && \
     mkdir /consul
 
