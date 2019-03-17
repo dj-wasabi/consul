@@ -10,11 +10,11 @@ RUN apk --update --no-cache add tini curl bash libcap python net-tools ca-certif
     rm -rf /var/cache/apk/* && \
     mkdir /consul
 
-ADD ./src/bin/start-consul.sh /bin/start-consul.sh
-ADD ./src/etc/config.json /consul/config.json
+COPY ./src/bin/start-consul.sh /bin/start-consul.sh
+COPY ./src/etc/config.json /consul/config.json
 
-RUN adduser -D -u ${CONSUL_USERID} ${CONSUL_USERNAME} && \
-    curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \
+RUN adduser -D -u $CONSUL_USERID $CONSUL_USERNAME && \
+    curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/$CONSUL_VERSION/consul_${CONSUL_VERSION}_linux_amd64.zip && \
     unzip -d /bin /tmp/consul.zip && \
     rm -f /tmp/consul.zip && \
     mkdir -p /consul/data /consul/ui /consul/config && \
@@ -24,7 +24,7 @@ RUN adduser -D -u ${CONSUL_USERID} ${CONSUL_USERNAME} && \
     setcap "cap_net_bind_service=+ep" /bin/consul && \
     chmod +x /bin/start-consul.sh
 
-USER ${CONSUL_USERNAME}
+USER $CONSUL_USERNAME
 
 EXPOSE 8300 8301 8301/udp 8302 8302/udp 8400 8500 53 53/udp
 VOLUME ["/consul/data", "/consul/config"]
