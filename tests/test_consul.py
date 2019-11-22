@@ -4,18 +4,18 @@ import base64
 import json
 
 
-def test_socker(Socket):
-    assert Socket('tcp://:::8500').is_listening
-    assert Socket('tcp://:::8302').is_listening
-    assert Socket('udp://:::8302').is_listening
-    assert Socket('tcp://:::8301').is_listening
-    assert Socket('udp://:::8301').is_listening
-    assert Socket('tcp://:::8300').is_listening
-    assert Socket('udp://:::53').is_listening
+def test_socker(host):
+    assert host.socket('tcp://:::8500').is_listening
+    assert host.socket('tcp://:::8302').is_listening
+    assert host.socket('udp://:::8302').is_listening
+    assert host.socket('tcp://:::8301').is_listening
+    assert host.socket('udp://:::8301').is_listening
+    assert host.socket('tcp://:::8300').is_listening
+    assert host.socket('udp://:::53').is_listening
 
 
-def test_config_file(File):
-    config_file = File("/consul/config.json")
+def test_config_file(host):
+    config_file = host.file("/consul/config.json")
     assert config_file.user == "consul"
     assert config_file.group == "root"
     assert config_file.mode == 0o644
