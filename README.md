@@ -8,8 +8,8 @@ This is an Docker container for Consul running on Alpine. The container is small
 
 The versions in this Docker container:
 
-* alpine: 3.10
-* consul: 1.7.2
+* alpine: 3.11
+* consul: 1.8.2
 * python: 2.7.13
 
 ### Volumes
@@ -71,7 +71,8 @@ The UID used in this container is 1050. So make sure the id is already available
 - `1.6.1`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/5966cd22fb118a9c3bd030d9844d770ccdd42826/Dockerfile)
 - `1.6.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/798d651370027b60d5b804c06e5240596b4e7ddc/Dockerfile)
 - `1.7.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/a961840e91f9e530be30766a7919dd16851d0ecc/Dockerfile)
-- `1.7.2`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/master/Dockerfile)
+- `1.7.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/e1ad6730c9cddaa5bb53de7619db95ed5ee11038/Dockerfile)
+- `1.8.2`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/master/Dockerfile)
 
 The version of this container will be the same as the version of Consul, beginning with Consul 0.7.2.
 
