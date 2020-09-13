@@ -1,0 +1,7 @@
+---
+repos:
+- repo: https://github.com/dj-wasabi/pre-commit-hooks
+  rev: master
+  hooks:
+    - id: docker-lint
+
