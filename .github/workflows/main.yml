@@ -1,0 +1,30 @@
+# Github action to build, run and test a Docker image.
+
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing dependencies
+        run: pip install -r requirements.txt
+
+      - name: Building Docker image
+        run: docker build -t wdijkerman/consul .
+
+      - name: Installing dependencies
+        run: |
+          docker-compose up -d consul
+          while [[ $(docker logs consul 2>&1 | grep 'agent: Synced node info' | wc -l) -eq 0 ]];do
+            echo 'Waiting for proper boot'
+            sleep 5
+          done
+
+      - name: Installing dependencies
+        run: testinfra --connection=docker --hosts=consul
