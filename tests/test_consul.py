@@ -31,4 +31,4 @@ def test_get_key_from_consul():
     data = requests.get('http://localhost:8500/v1/kv/foo')
     json_data = data.json()
     value = base64.b64decode(json_data[0]['Value'])
-    assert value == "This is an test."
+    assert value == b"This is an test."
