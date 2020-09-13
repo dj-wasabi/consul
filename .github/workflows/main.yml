@@ -27,4 +27,4 @@ jobs:
           done
 
       - name: Installing dependencies
-        run: testinfra --connection=docker --hosts=consul
+        run: py.test -v --connection=docker --hosts=consul
