@@ -18,7 +18,7 @@ jobs:
       - name: Building Docker image
         run: docker build -t wdijkerman/consul .
 
-      - name: Installing dependencies
+      - name: Start Consul
         run: |
           docker-compose up -d consul
           while [[ $(docker logs consul 2>&1 | grep 'agent: Synced node info' | wc -l) -eq 0 ]];do
@@ -26,5 +26,5 @@ jobs:
             sleep 5
           done
 
-      - name: Installing dependencies
+      - name: Execute testinfra
         run: py.test -v --connection=docker --hosts=consul
