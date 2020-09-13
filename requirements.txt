@@ -1,2 +1,1 @@
-requests==2.20.1
-testinfra==1.16.0
+testinfra==5.2.1
