@@ -8,9 +8,9 @@ This is an Docker container for Consul running on Alpine. The container is small
 
 The versions in this Docker container:
 
-* alpine: 3.11
+* alpine: 3.12
 * consul: 1.8.2
-* python: 2.7.13
+* python: 3.8.5
 
 ### Volumes
 The consul application is installed in the /bin directory in the container, so is the start script. There data from Consul is in the /consul directory:
