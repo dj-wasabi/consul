@@ -9,7 +9,7 @@ This is an Docker container for Consul running on Alpine. The container is small
 The versions in this Docker container:
 
 * alpine: 3.12
-* consul: 1.8.4
+* consul: 1.8.5
 * python: 3.8.5
 
 ### Volumes
@@ -32,50 +32,6 @@ Consul is running as user consul. With the following capabilities (which are con
 - cap_net_bind_service (Can bind service <1023 as non root user)
 
 The UID used in this container is 1050. So make sure the id is already available on the host running the container when host mounts are used.
-
-### Versions
-
-- `0.0.1`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/df23223d6a796bf32400ea652f81b5d8daad8a42/Dockerfile)
-- `0.0.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/19f77a25940ce72f1f708ed5c93ffa64355606f2/Dockerfile)
-- `0.0.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/3765e14486a8dcf371f23784300687130c70ea95/Dockerfile)
-- `0.7.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/beb68930fd9851d29ef63c67b89725ba8083a534/Dockerfile)
-- `0.7.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/cb39070762027b35700918e838fa9ea02dc75bcf/Dockerfile)
-- `0.7.5`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/f24be30a0adfe709fd5d68d7e3df350a0893ec3b/Dockerfile)
-- `0.8.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/f62457c97f71ea28688b9f04f3b2cf42f358ad1c/Dockerfile)
-- `0.8.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/bb9b93911d6d0449f315fd6a756fcc82f03e7306/Dockerfile)
-- `0.8.4`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/5d0978b693daf39a482711e309b126d148ed66e5/Dockerfile)
-- `0.8.5`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/0c6c149b018f6a95ef64c8adf01c6837889b9cbd/Dockerfile)
-- `0.9.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/3adb6502c1218537c99cbc945974a6a6c72eb8ef/Dockerfile)
-- `0.9.1`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/504d9b4508ac6b1b0313c2db33b46cdbb75deeea/Dockerfile)
-- `0.9.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/2943039888b036937cb7ecc757347c8afef47b81/Dockerfile)
-- `1.0.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/30eddb18c97091a469a871e908a48cb598da30c1/Dockerfile)
-- `1.0.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/47fcf6806176e30fe72907b04f2e806132ec6720/Dockerfile)
-- `1.0.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/1aacdd0eebaa43e66f56e841eae10095e4718e37/Dockerfile)
-- `1.0.6`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/6286a312462e98fa2477f12f419a08d05cedc453/Dockerfile)
-- `1.1.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/201a261277c58926a7fb78baf2e02a4998935557/Dockerfile)
-- `1.2.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/721a5d292e10358a1e137017e04f02d18e73294e/Dockerfile)
-- `1.2.1`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/c6109e61939618fbb33097bd348b9b12a48ac6ea/Dockerfile)
-- `1.2.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/dbbc9e042532c8077f1dbade41ace3feabe834f5/Dockerfile)
-- `1.2.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/824d94bfdc0ac5261affa6a472e2ee5642783c8b/Dockerfile)
-- `1.3.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/f3b4babb4b68e243bd197f256e8c166df08abe38/Dockerfile)
-- `1.4.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/7d2ab32383a9414bf921a168183fcf80922a8163/Dockerfile)
-- `1.4.1`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/58906de65587856c8801c7ab04c8142a262f8416/Dockerfile)
-- `1.4.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/7f42e9e1094737a7d9b8f13156516e927c76da1b/Dockerfile)
-- `1.4.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/8fdc5cc6983be7ca5fbeaa431b2bbcce9f5ac000/Dockerfile)
-- `1.4.4`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/16b70e38eee1451c0ac351823cb46e07d7cc9f3b/Dockerfile)
-- `1.5.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/b5b660518d005563782ff69d27545e33d8a7139d/Dockerfile)
-- `1.5.1`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/2c8e6efc71a7f6579c5f7d2d99e7493c4c487cf8/Dockerfile)
-- `1.5.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/214b869940669127882197548731a2e44376bf52/Dockerfile)
-- `1.5.3`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/532239fa4a70d096940e2a81bf90a18a33cda81e/Dockerfile)
-- `1.6.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/b009389efaeb8c28a944908847f51c10f881e215/Dockerfile)
-- `1.6.1`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/5966cd22fb118a9c3bd030d9844d770ccdd42826/Dockerfile)
-- `1.6.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/798d651370027b60d5b804c06e5240596b4e7ddc/Dockerfile)
-- `1.7.0`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/a961840e91f9e530be30766a7919dd16851d0ecc/Dockerfile)
-- `1.7.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/e1ad6730c9cddaa5bb53de7619db95ed5ee11038/Dockerfile)
-- `1.8.2`,  [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/9f19ba779855d98f0ac7b0fcd218fe2bb1745b34/Dockerfile)
-- `1.8.4`, `latest` [(Dockerfile)](https://github.com/dj-wasabi/consul/blob/master/Dockerfile)
-
-The version of this container will be the same as the version of Consul, beginning with Consul 0.7.2.
 
 ### Python?
 
