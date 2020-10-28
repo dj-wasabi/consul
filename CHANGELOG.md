@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.5](https://github.com/dj-wasabi/consul/tree/1.8.5) (2020-10-28)
+
+[Full Changelog](https://github.com/dj-wasabi/consul/compare/1.8.4...1.8.5)
+
+**Merged pull requests:**
+
+- Updated to Consul 1.8.5 [\#35](https://github.com/dj-wasabi/consul/pull/35) ([dj-wasabi](https://github.com/dj-wasabi))
+
 ## [1.8.4](https://github.com/dj-wasabi/consul/tree/1.8.4) (2020-09-13)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.8.2...1.8.4)
@@ -193,7 +201,6 @@
 
 - Remove the downloaded file [\#7](https://github.com/dj-wasabi/consul/pull/7) ([dj-wasabi](https://github.com/dj-wasabi))
 - Updating to Consul 1.0.6 [\#6](https://github.com/dj-wasabi/consul/pull/6) ([dj-wasabi](https://github.com/dj-wasabi))
-- Updating to 1.0.2 [\#5](https://github.com/dj-wasabi/consul/pull/5) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.0.3](https://github.com/dj-wasabi/consul/tree/1.0.3) (2018-01-27)
 
@@ -205,8 +212,8 @@
 
 **Merged pull requests:**
 
+- Updating to 1.0.2 [\#5](https://github.com/dj-wasabi/consul/pull/5) ([dj-wasabi](https://github.com/dj-wasabi))
 - Updating alpine to 3.7 [\#4](https://github.com/dj-wasabi/consul/pull/4) ([dj-wasabi](https://github.com/dj-wasabi))
-- Removing some files;Added docker-compose [\#3](https://github.com/dj-wasabi/consul/pull/3) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.0.0](https://github.com/dj-wasabi/consul/tree/1.0.0) (2017-10-26)
 
@@ -214,6 +221,7 @@
 
 **Merged pull requests:**
 
+- Removing some files;Added docker-compose [\#3](https://github.com/dj-wasabi/consul/pull/3) ([dj-wasabi](https://github.com/dj-wasabi))
 - Upgrading to 1.0.0 [\#2](https://github.com/dj-wasabi/consul/pull/2) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [0.9.2](https://github.com/dj-wasabi/consul/tree/0.9.2) (2017-08-24)
