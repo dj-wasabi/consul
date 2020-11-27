@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.0](https://github.com/dj-wasabi/consul/tree/1.9.0) (2020-11-27)
+
+[Full Changelog](https://github.com/dj-wasabi/consul/compare/1.8.5...1.9.0)
+
+**Merged pull requests:**
+
+- Updating to Consul 1.9.0 [\#36](https://github.com/dj-wasabi/consul/pull/36) ([dj-wasabi](https://github.com/dj-wasabi))
+
 ## [1.8.5](https://github.com/dj-wasabi/consul/tree/1.8.5) (2020-10-28)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.8.4...1.8.5)
@@ -98,10 +106,6 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.4.4...1.5.0)
 
-**Merged pull requests:**
-
-- Updating to Consul 1.5.0 [\#22](https://github.com/dj-wasabi/consul/pull/22) ([dj-wasabi](https://github.com/dj-wasabi))
-
 ## [1.4.4](https://github.com/dj-wasabi/consul/tree/1.4.4) (2019-03-23)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.4.3...1.4.4)
@@ -133,6 +137,7 @@
 
 **Merged pull requests:**
 
+- Updating to Consul 1.5.0 [\#22](https://github.com/dj-wasabi/consul/pull/22) ([dj-wasabi](https://github.com/dj-wasabi))
 - Updating to Consul 1.4.1 [\#17](https://github.com/dj-wasabi/consul/pull/17) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.4.0](https://github.com/dj-wasabi/consul/tree/1.4.0) (2018-11-21)
@@ -214,6 +219,8 @@
 
 - Updating to 1.0.2 [\#5](https://github.com/dj-wasabi/consul/pull/5) ([dj-wasabi](https://github.com/dj-wasabi))
 - Updating alpine to 3.7 [\#4](https://github.com/dj-wasabi/consul/pull/4) ([dj-wasabi](https://github.com/dj-wasabi))
+- Removing some files;Added docker-compose [\#3](https://github.com/dj-wasabi/consul/pull/3) ([dj-wasabi](https://github.com/dj-wasabi))
+- Travis setup [\#1](https://github.com/dj-wasabi/consul/pull/1) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.0.0](https://github.com/dj-wasabi/consul/tree/1.0.0) (2017-10-26)
 
@@ -221,7 +228,6 @@
 
 **Merged pull requests:**
 
-- Removing some files;Added docker-compose [\#3](https://github.com/dj-wasabi/consul/pull/3) ([dj-wasabi](https://github.com/dj-wasabi))
 - Upgrading to 1.0.0 [\#2](https://github.com/dj-wasabi/consul/pull/2) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [0.9.2](https://github.com/dj-wasabi/consul/tree/0.9.2) (2017-08-24)
@@ -271,10 +277,6 @@
 ## [0.0.2](https://github.com/dj-wasabi/consul/tree/0.0.2) (2016-08-31)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/0.0.1...0.0.2)
-
-**Merged pull requests:**
-
-- Travis setup [\#1](https://github.com/dj-wasabi/consul/pull/1) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [0.0.1](https://github.com/dj-wasabi/consul/tree/0.0.1) (2016-04-11)
 
