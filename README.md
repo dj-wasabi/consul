@@ -1,6 +1,6 @@
 # wdijkerman/consul
 
-![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg) [![](https://images.microbadger.com/badges/image/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own version badge on microbadger.com") [![Build Status](https://travis-ci.org/dj-wasabi/consul.svg?branch=master)](https://travis-ci.org/dj-wasabi/consul)
+![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg) [![](https://images.microbadger.com/badges/image/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own version badge on microbadger.com") [![Build Status](https://github.com/dj-wasabi/consul/workflows/CI/badge.svg)](https://github.com/dj-wasabi/consul/actions?query=workflow%3ACI)
 
 ## Introduction
 
@@ -9,7 +9,7 @@ This is an Docker container for Consul running on Alpine. The container is small
 The versions in this Docker container:
 
 * alpine: 3.12
-* consul: 1.8.5
+* consul: 1.9.0
 * python: 3.8.5
 
 ### Volumes
