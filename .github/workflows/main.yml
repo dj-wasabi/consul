@@ -21,6 +21,15 @@ jobs:
       - name: Installing dependencies
         run: pip install -r requirements.txt
 
+      - name: 'Build:dockerimage'
+        uses: docker/build-push-action@v1
+        with:
+          registry: ghcr.io
+          username: "dj-wasabi"
+          password: ${{ secrets.PAT }}
+          repository: wdijkerman/consul
+          tags: latest
+
       - name: Building Docker image
         run: docker build -t wdijkerman/consul .
 
