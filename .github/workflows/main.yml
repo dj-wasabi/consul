@@ -35,7 +35,9 @@ jobs:
         tag_with_sha: true
 
     - name: Building Docker image
-      run: docker tag dj-wasabi/consul/consul wdijkerman/consul
+      run: |
+        docker image ls
+        docker tag dj-wasabi/consul/consul wdijkerman/consul
 
     - name: Start Consul
       run: |
