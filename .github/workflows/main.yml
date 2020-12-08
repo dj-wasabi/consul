@@ -36,8 +36,8 @@ jobs:
 
     - name: Building Docker image
       run: |
-        docker image ls
-        docker tag dj-wasabi/consul/consul wdijkerman/consul
+        PIZZA=$(docker image ls | grep 'docker.pkg.github.com/dj-wasabi/consul/consul' | awk '{print $2}')
+        docker tag docker.pkg.github.com/dj-wasabi/consul/consul:${PIZZA} wdijkerman/consul
 
     - name: Start Consul
       run: |
