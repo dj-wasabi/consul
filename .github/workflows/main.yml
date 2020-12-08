@@ -25,14 +25,20 @@ jobs:
     - name: Installing dependencies
       run: pip install -r requirements.txt
 
-    - name: Build container image
-      uses: docker/build-push-action@v1
-      with:
-        username: ${{github.actor}}
-        password: ${{secrets.GITHUB_TOKEN}}
-        registry: docker.pkg.github.com
-        repository: dj-wasabi/consul/consul
-        tag_with_sha: true
+    - name: Docker login
+      run: docker login docker.pkg.github.com -u ${{github.actor}} -p ${{secrets.GITHUB_TOKEN}}
+
+    - name: Docker build
+      run: docker build -t docker.pkg.github.com/dj-wasabi/consul/consul .
+
+    # - name: Build container image
+    #   uses: docker/build-push-action@v1
+    #   with:
+    #     username: ${{github.actor}}
+    #     password: ${{secrets.GITHUB_TOKEN}}
+    #     registry: docker.pkg.github.com
+    #     repository: dj-wasabi/consul/consul
+    #     tag_with_sha: true
 
     - name: Building Docker image
       run: |
