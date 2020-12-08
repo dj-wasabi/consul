@@ -55,3 +55,6 @@ jobs:
 
     - name: Execute testinfra
       run: py.test -v --connection=docker --hosts=consul
+
+    - name: Docker push
+      run: docker push docker.pkg.github.com/dj-wasabi/consul/consul
