@@ -31,11 +31,11 @@ jobs:
         username: ${{github.actor}}
         password: ${{secrets.GITHUB_TOKEN}}
         registry: docker.pkg.github.com
-        repository: dj-wasabi/consul
+        repository: dj-wasabi/consul/consul
         tag_with_sha: true
 
     - name: Building Docker image
-      run: docker tag dj-wasabi/consul wdijkerman/consul
+      run: docker tag dj-wasabi/consul/consul wdijkerman/consul
 
     - name: Start Consul
       run: |
