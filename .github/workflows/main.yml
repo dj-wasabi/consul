@@ -8,45 +8,43 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+
+  Build-and-Push-Docker-Image:
     runs-on: ubuntu-latest
+    needs: test
+    name: Docker Build, Tag, Push
+
     steps:
-      - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
 
-      - name: Installing dependencies
-        run: pip install -r requirements.txt
+    - name: Installing dependencies
+      run: pip install -r requirements.txt
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+    - name: Build container image
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{github.actor}}
+        password: ${{secrets.GITHUB_TOKEN}}
+        registry: docker.pkg.github.com
+        repository: dj-wasabi/consul
+        tag_with_sha: true
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1 
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Building Docker image
+      run: docker tag dj-wasabi/consul wdijkerman/consul
 
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: dj-wasabi/consul:latest
+    - name: Start Consul
+      run: |
+        docker-compose up -d consul
+        while [[ $(docker logs consul 2>&1 | grep 'agent: Synced node info' | wc -l) -eq 0 ]];do
+          echo 'Waiting for proper boot'
+          sleep 5
+        done
 
-      - name: Building Docker image
-        run: docker build -t wdijkerman/consul .
-
-      - name: Start Consul
-        run: |
-          docker-compose up -d consul
-          while [[ $(docker logs consul 2>&1 | grep 'agent: Synced node info' | wc -l) -eq 0 ]];do
-            echo 'Waiting for proper boot'
-            sleep 5
-          done
-
-      - name: Execute testinfra
-        run: py.test -v --connection=docker --hosts=consul
+    - name: Execute testinfra
+      run: py.test -v --connection=docker --hosts=consul
