@@ -1,10 +1,18 @@
 # Changelog
 
+## [Unreleased](https://github.com/dj-wasabi/consul/tree/HEAD)
+
+[Full Changelog](https://github.com/dj-wasabi/consul/compare/1.9.0...HEAD)
+
+**Implemented enhancements:**
+
+- Added GH Action to automatically update CHANGELOG.md [\#38](https://github.com/dj-wasabi/consul/pull/38) ([dj-wasabi](https://github.com/dj-wasabi))
+
 ## [1.9.0](https://github.com/dj-wasabi/consul/tree/1.9.0) (2020-11-27)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.8.5...1.9.0)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.9.0 [\#36](https://github.com/dj-wasabi/consul/pull/36) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -12,7 +20,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.8.4...1.8.5)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updated to Consul 1.8.5 [\#35](https://github.com/dj-wasabi/consul/pull/35) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -20,7 +28,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.8.2...1.8.4)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.8.4 [\#34](https://github.com/dj-wasabi/consul/pull/34) ([dj-wasabi](https://github.com/dj-wasabi))
 - Create main.yml [\#33](https://github.com/dj-wasabi/consul/pull/33) ([dj-wasabi](https://github.com/dj-wasabi))
@@ -38,7 +46,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.7.0...1.7.2)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.7.2 [\#30](https://github.com/dj-wasabi/consul/pull/30) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -46,7 +54,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.6.2...1.7.0)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.7.0 [\#29](https://github.com/dj-wasabi/consul/pull/29) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -54,7 +62,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.6.1...1.6.2)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating Consul to 1.6.2 [\#28](https://github.com/dj-wasabi/consul/pull/28) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -62,7 +70,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.6.0...1.6.1)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.6.1 [\#27](https://github.com/dj-wasabi/consul/pull/27) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -70,7 +78,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.5.3...1.6.0)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.6.0 [\#26](https://github.com/dj-wasabi/consul/pull/26) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -78,7 +86,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.5.2...1.5.3)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating Consul to 1.5.3 [\#25](https://github.com/dj-wasabi/consul/pull/25) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -86,7 +94,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.5.1...1.5.2)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating Alpine to later version;Updating Consul to 1.5.2 [\#24](https://github.com/dj-wasabi/consul/pull/24) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -98,7 +106,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.5.0...1.5.a)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.5.1 [\#23](https://github.com/dj-wasabi/consul/pull/23) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -106,11 +114,15 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.4.4...1.5.0)
 
+**Implemented enhancements:**
+
+- Updating to Consul 1.5.0 [\#22](https://github.com/dj-wasabi/consul/pull/22) ([dj-wasabi](https://github.com/dj-wasabi))
+
 ## [1.4.4](https://github.com/dj-wasabi/consul/tree/1.4.4) (2019-03-23)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.4.3...1.4.4)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating Consul to 1.4.4 [\#21](https://github.com/dj-wasabi/consul/pull/21) ([dj-wasabi](https://github.com/dj-wasabi))
 - Suggested changes due to run of hadolint [\#20](https://github.com/dj-wasabi/consul/pull/20) ([dj-wasabi](https://github.com/dj-wasabi))
@@ -119,7 +131,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.4.2...1.4.3)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.4.3 [\#19](https://github.com/dj-wasabi/consul/pull/19) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -127,7 +139,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.4.1...1.4.2)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updated to Consul 1.4.2 [\#18](https://github.com/dj-wasabi/consul/pull/18) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -135,16 +147,15 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.4.0...1.4.1)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
-- Updating to Consul 1.5.0 [\#22](https://github.com/dj-wasabi/consul/pull/22) ([dj-wasabi](https://github.com/dj-wasabi))
 - Updating to Consul 1.4.1 [\#17](https://github.com/dj-wasabi/consul/pull/17) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.4.0](https://github.com/dj-wasabi/consul/tree/1.4.0) (2018-11-21)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.2.3...1.4.0)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.4.0 [\#16](https://github.com/dj-wasabi/consul/pull/16) ([dj-wasabi](https://github.com/dj-wasabi))
 - Updating to Consul 1.3.0 [\#15](https://github.com/dj-wasabi/consul/pull/15) ([dj-wasabi](https://github.com/dj-wasabi))
@@ -153,7 +164,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.2.2...1.2.3)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating Consul to 1.2.3 [\#14](https://github.com/dj-wasabi/consul/pull/14) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -161,7 +172,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.2.1...1.2.2)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.2.2 [\#13](https://github.com/dj-wasabi/consul/pull/13) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -169,7 +180,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.2.0...1.2.1)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.2.1 [\#12](https://github.com/dj-wasabi/consul/pull/12) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -177,7 +188,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.1.0...1.2.0)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Adding some files;Updating to 1.2.0 [\#11](https://github.com/dj-wasabi/consul/pull/11) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -185,7 +196,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.0.7...1.1.0)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to Consul 1.1.0 [\#10](https://github.com/dj-wasabi/consul/pull/10) ([dj-wasabi](https://github.com/dj-wasabi))
 - Minor improvements [\#9](https://github.com/dj-wasabi/consul/pull/9) ([dj-wasabi](https://github.com/dj-wasabi))
@@ -194,7 +205,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.0.6...1.0.7)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Changing to Consul 1.0.7 [\#8](https://github.com/dj-wasabi/consul/pull/8) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -202,7 +213,7 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.0.3...1.0.6)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Remove the downloaded file [\#7](https://github.com/dj-wasabi/consul/pull/7) ([dj-wasabi](https://github.com/dj-wasabi))
 - Updating to Consul 1.0.6 [\#6](https://github.com/dj-wasabi/consul/pull/6) ([dj-wasabi](https://github.com/dj-wasabi))
@@ -215,18 +226,17 @@
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.0.0...1.0.2)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Updating to 1.0.2 [\#5](https://github.com/dj-wasabi/consul/pull/5) ([dj-wasabi](https://github.com/dj-wasabi))
 - Updating alpine to 3.7 [\#4](https://github.com/dj-wasabi/consul/pull/4) ([dj-wasabi](https://github.com/dj-wasabi))
 - Removing some files;Added docker-compose [\#3](https://github.com/dj-wasabi/consul/pull/3) ([dj-wasabi](https://github.com/dj-wasabi))
-- Travis setup [\#1](https://github.com/dj-wasabi/consul/pull/1) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.0.0](https://github.com/dj-wasabi/consul/tree/1.0.0) (2017-10-26)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/0.9.2...1.0.0)
 
-**Merged pull requests:**
+**Implemented enhancements:**
 
 - Upgrading to 1.0.0 [\#2](https://github.com/dj-wasabi/consul/pull/2) ([dj-wasabi](https://github.com/dj-wasabi))
 
@@ -277,6 +287,10 @@
 ## [0.0.2](https://github.com/dj-wasabi/consul/tree/0.0.2) (2016-08-31)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/0.0.1...0.0.2)
+
+**Implemented enhancements:**
+
+- Travis setup [\#1](https://github.com/dj-wasabi/consul/pull/1) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [0.0.1](https://github.com/dj-wasabi/consul/tree/0.0.1) (2016-04-11)
 
