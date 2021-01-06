@@ -1,36 +1,49 @@
-# Github action to build, run and test a Docker image.
+# This will execute some scripts on main branch.
 
-name: CI
+name: MasterRun
+
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - main
+
+  workflow_dispatch:
 
 jobs:
-  build:
+  runme:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
+      - name: Checkout dj-wasabi-release repo
+        uses: actions/checkout@v2
         with:
-          python-version: 3.8
+          repository: dj-wasabi/dj-wasabi-release
+          path: dj-wasabi-release
 
-      - name: Installing dependencies
-        run: pip install -r requirements.txt
+      - name: Checkout current repo
+        uses: actions/checkout@v2
+        with:
+          path: main
 
-      - name: Building Docker image
-        run: docker build -t wdijkerman/consul .
-
-      - name: Start Consul
+      - name: Commit Changelog file
         run: |
-          docker-compose up -d consul
-          while [[ $(docker logs consul 2>&1 | grep 'agent: Synced node info' | wc -l) -eq 0 ]];do
-            echo 'Waiting for proper boot'
-            sleep 5
-          done
+          # We are cloned in the 'main' directory and the dj-wasabi-release
+          # repository is the 'dj-wasabi-release' next to 'main'
+          cd main
 
-      - name: Execute testinfra
-        run: py.test -v --connection=docker --hosts=consul
+          # Generate CHANGELOG.md file
+          ../dj-wasabi-release/release.sh -d
+
+          # Let commit the changes if there are any? (Well there should be!)
+          if [[ $(git status | grep -c 'CHANGELOG.md' || true) -gt 0 ]]
+            then  echo "Committing file"
+                  git config --global user.name 'Werner Dijkerman [GH bot]'
+                  git config --global user.email 'github@dj-wasabi.nl'
+
+                  git add CHANGELOG.md
+                  git commit -m "Updated CHANGELOG.md on \"$(date "+%Y-%m-%d %H:%M:%S")\"" CHANGELOG.md
+                  git push
+          fi
+        env:
+          CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
