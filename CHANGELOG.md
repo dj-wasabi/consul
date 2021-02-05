@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- updating to Consul 1.9.3 [\#39](https://github.com/dj-wasabi/consul/pull/39) ([dj-wasabi](https://github.com/dj-wasabi))
 - Added GH Action to automatically update CHANGELOG.md [\#38](https://github.com/dj-wasabi/consul/pull/38) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.9.0](https://github.com/dj-wasabi/consul/tree/1.9.0) (2020-11-27)
