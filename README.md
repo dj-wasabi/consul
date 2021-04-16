@@ -1,18 +1,42 @@
 # wdijkerman/consul
 
+<!--TOC-->
+
+- [wdijkerman/consul](#wdijkermanconsul)
+- [Introduction](#introduction)
+  - [Volumes](#volumes)
+  - [User](#user)
+  - [Python?](#python)
+- [Install the container](#install-the-container)
+- [Using the container](#using-the-container)
+  - [Single node (Cluster) server](#single-node-cluster-server)
+  - [Multi node cluster](#multi-node-cluster)
+  - [Agent](#agent)
+  - [docker-compose](#docker-compose)
+- [Configurations](#configurations)
+  - [Environment variables](#environment-variables)
+  - [Add commandline](#add-commandline)
+  - [Add configuration file](#add-configuration-file)
+- [Ports](#ports)
+- [how to's](#how-tos)
+- [License](#license)
+- [Issues](#issues)
+
+<!--TOC-->
+
 ![Docker Stars](https://img.shields.io/docker/stars/wdijkerman/consul.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/wdijkerman/consul.svg) [![](https://images.microbadger.com/badges/image/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/wdijkerman/consul.svg)](https://microbadger.com/images/wdijkerman/consul "Get your own version badge on microbadger.com") [![Build Status](https://github.com/dj-wasabi/consul/workflows/CI/badge.svg)](https://github.com/dj-wasabi/consul/actions?query=workflow%3ACI)
 
-## Introduction
+# Introduction
 
 This is an Docker container for Consul running on Alpine. The container is small, a little bit more than 75MB in size.
 
 The versions in this Docker container:
 
-* alpine: 3.12
-* consul: 1.9.3
+* alpine: 3.13
+* consul: 1.9.4
 * python: 3.8.5
 
-### Volumes
+## Volumes
 The consul application is installed in the /bin directory in the container, so is the start script. There data from Consul is in the /consul directory:
 
 * /consul/config
@@ -24,7 +48,7 @@ The location of the config.json file. This is also an volume, so this can be mou
 */consul/data*
 The location where Consul will store all data. This is also an volume, so this can be mounted on the host.
 
-### User
+## User
 
 Consul is running as user consul. With the following capabilities (which are configured in this container)it should be no problem running Consul as non-root user:
 
@@ -33,12 +57,12 @@ Consul is running as user consul. With the following capabilities (which are con
 
 The UID used in this container is 1050. So make sure the id is already available on the host running the container when host mounts are used.
 
-### Python?
+## Python?
 
 Python is also installed in the container. Python is used for testing the container, which is done with the tool `testinfra`.
 You can see in the `tests` directory a file named `test_consul.py` which will be executed.
 
-## Install the container
+# Install the container
 
 Just run the following command to download the container:
 
@@ -46,11 +70,11 @@ Just run the following command to download the container:
 docker pull wdijkerman/consul
 ```
 
-## Using the container
+# Using the container
 
 There are several ways to use this container.
 
-### Single node (Cluster) server
+## Single node (Cluster) server
 
 This example will boot an single node Consul server, without any agents.
 
@@ -81,7 +105,7 @@ docker run  -p 8400:8400 -p 8500:8500 \
 ```
 
 
-### Multi node cluster
+## Multi node cluster
 
 According to the official documentation of Consul bu Hashicorp, the best (or optimal) cluster size will be 3 or 5 nodes. The first node in the cluster is started differently than the others. The first node will be started like this:
 
@@ -112,7 +136,7 @@ docker run  -p 8300-8302:8300-8302 \
 
 The rest of the server will initially connect to the first booted server and will join the cluster. 
 
-### Agent
+## Agent
 
 When we have an Consul cluster, we can add agents to the cluster. They will handle the requests from other docker services
 
@@ -124,7 +148,7 @@ docker run  -p 8301-8302:8301-8302 \
             -h agent[1-??] wdijkerman/consul
 ```
 
-### docker-compose
+## docker-compose
 
 A `docker-compose.yml` file is present in the root, that can be used for starting a basic single node Consul Server.
 
@@ -132,11 +156,11 @@ A `docker-compose.yml` file is present in the root, that can be used for startin
 docker-compose -f docker-compose.yml up consul
 ```
 
-## Configurations
+# Configurations
 
 There are a lot of options to configure Consul. See this page for all options: https://www.consul.io/docs/agent/options.html
 
-### Environment variables
+## Environment variables
 
 You can use the following environment variables for configuring Consul:
 
@@ -150,7 +174,7 @@ Example:
 -e CONSUL_INTERFACE_BIND=eth0
 ```
 
-### Add commandline
+## Add commandline
 
 You can add the options in the command line, see the following example:
 
@@ -164,7 +188,7 @@ docker run  -p 8301-8302:8301-8302 \
 
 In the configuration you see above, we have added the `-advertise` configuration option.
 
-### Add configuration file
+## Add configuration file
 
 You can also add a json configuration file. Place the json file in the `/data/consul/config` directory (Or use the directory which you use for storing configuration).
 
@@ -191,7 +215,7 @@ When Consul is restarted, you'll see that the datacenter is set to "nwg".
              Atlas: <disabled>
 ```
 
-## Ports
+# Ports
 
 Consul requires up to 5 different ports to work properly, some on TCP, UDP, or both protocols. Below we document the requirements for each port.
 
@@ -203,18 +227,18 @@ Consul requires up to 5 different ports to work properly, some on TCP, UDP, or b
 * gRPC (Default 8502). This is used for to expose Envoy xDS API to Envoy proxies
 * DNS Interface (Default 8600). Used to resolve DNS queries. TCP and UDP.
 
-## how to's
+# how to's
 
 [Setting up a secure Consul cluster](https://werner-dijkerman.nl/2017/01/09/setting-up-a-secure-consul-cluster-with-docker/)
 [Configuring Access Control Lists](https://werner-dijkerman.nl/2017/01/11/configuring-access-control-lists-in-consul/)
 
-## License
+# License
 
 The MIT License (MIT)
 
 See file: License
 
-## Issues
+# Issues
 
 Please report issues at https://github.com/dj-wasabi/consul/issues
 
