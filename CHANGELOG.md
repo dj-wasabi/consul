@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/dj-wasabi/consul/tree/HEAD)
+
+[Full Changelog](https://github.com/dj-wasabi/consul/compare/1.9.3...HEAD)
+
+**Implemented enhancements:**
+
+- Updating to Consul 1.9.4 [\#40](https://github.com/dj-wasabi/consul/pull/40) ([dj-wasabi](https://github.com/dj-wasabi))
+
 ## [1.9.3](https://github.com/dj-wasabi/consul/tree/1.9.3) (2021-02-05)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.9.0...1.9.3)
