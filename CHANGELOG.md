@@ -1,8 +1,8 @@
 # Changelog
 
-## [1.9.4](https://github.com/dj-wasabi/consul/tree/1.9.4) (2021-04-16)
+## [Unreleased](https://github.com/dj-wasabi/consul/tree/HEAD)
 
-[Full Changelog](https://github.com/dj-wasabi/consul/compare/1.9.3...1.9.4)
+[Full Changelog](https://github.com/dj-wasabi/consul/compare/1.9.3...HEAD)
 
 **Implemented enhancements:**
 
@@ -143,7 +143,6 @@
 **Implemented enhancements:**
 
 - Updating to Consul 1.4.3 [\#19](https://github.com/dj-wasabi/consul/pull/19) ([dj-wasabi](https://github.com/dj-wasabi))
-- Updating to Consul 1.2.2 [\#13](https://github.com/dj-wasabi/consul/pull/13) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.4.2](https://github.com/dj-wasabi/consul/tree/1.4.2) (2019-03-02)
 
@@ -181,6 +180,10 @@
 ## [1.2.2](https://github.com/dj-wasabi/consul/tree/1.2.2) (2018-08-24)
 
 [Full Changelog](https://github.com/dj-wasabi/consul/compare/1.2.1...1.2.2)
+
+**Implemented enhancements:**
+
+- Updating to Consul 1.2.2 [\#13](https://github.com/dj-wasabi/consul/pull/13) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.2.1](https://github.com/dj-wasabi/consul/tree/1.2.1) (2018-07-14)
 
