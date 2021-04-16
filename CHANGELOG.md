@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/dj-wasabi/consul/tree/HEAD)
+## [1.9.4](https://github.com/dj-wasabi/consul/tree/1.9.4) (2021-04-16)
 
-[Full Changelog](https://github.com/dj-wasabi/consul/compare/1.9.3...HEAD)
+[Full Changelog](https://github.com/dj-wasabi/consul/compare/1.9.3...1.9.4)
 
 **Implemented enhancements:**
 
