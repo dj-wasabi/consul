@@ -200,6 +200,7 @@
 **Implemented enhancements:**
 
 - Adding some files;Updating to 1.2.0 [\#11](https://github.com/dj-wasabi/consul/pull/11) ([dj-wasabi](https://github.com/dj-wasabi))
+- Updating to Consul 1.1.0 [\#10](https://github.com/dj-wasabi/consul/pull/10) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.1.0](https://github.com/dj-wasabi/consul/tree/1.1.0) (2018-05-11)
 
@@ -207,7 +208,6 @@
 
 **Implemented enhancements:**
 
-- Updating to Consul 1.1.0 [\#10](https://github.com/dj-wasabi/consul/pull/10) ([dj-wasabi](https://github.com/dj-wasabi))
 - Minor improvements [\#9](https://github.com/dj-wasabi/consul/pull/9) ([dj-wasabi](https://github.com/dj-wasabi))
 
 ## [1.0.7](https://github.com/dj-wasabi/consul/tree/1.0.7) (2018-04-29)
